@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsml>
+   <directory-schema>
+      <!--******************************************-->
+      <!--****** erldapurl ******-->
+      <!--******************************************-->
+      <attribute-type single-value="true">
+         <name>erldapurl</name>
+         <object-identifier>erldapurl-OID</object-identifier>
+         <syntax>1.3.6.1.4.1.1466.115.121.1.15</syntax>
+      </attribute-type>
+      <!--******************************************-->
+      <!--****** erreconfilter ******-->
+      <!--******************************************-->
+      <attribute-type single-value="true">
+         <name>erreconfilter</name>
+         <object-identifier>erreconfilter-OID</object-identifier>
+         <syntax>1.3.6.1.4.1.1466.115.121.1.15</syntax>
+      </attribute-type>
+      <!--******************************************-->
+      <!--****** eruidattrs ******-->
+      <!--******************************************-->
+      <attribute-type single-value="true">
+         <name>eruidattrs</name>
+         <object-identifier>eruidattrs-OID</object-identifier>
+         <syntax>1.3.6.1.4.1.1466.115.121.1.15</syntax>
+      </attribute-type>
+      <!--******************************************-->
+      <!--****** eritimperdn ******-->
+      <!--******************************************-->
+      <attribute-type single-value="true">
+         <name>eritimperdn</name>
+         <object-identifier>eritimperdn-OID</object-identifier>
+         <syntax>1.3.6.1.4.1.1466.115.121.1.15</syntax>
+      </attribute-type>
+      <!--******************************************-->
+      <!--****** erpersonobjectclass ******-->
+      <!--******************************************-->
+      <attribute-type single-value="false">
+         <name>erpersonobjectclass</name>
+         <object-identifier>erpersonobjectclass-OID</object-identifier>
+         <syntax>1.3.6.1.4.1.1466.115.121.1.15</syntax>
+      </attribute-type>
+      <!--******************************************-->
+      <!--****** erusesecureldap ******-->
+      <!--******************************************-->
+      <attribute-type single-value="true">
+         <name>erusesecureldap</name>
+         <object-identifier>erusesecureldap-OID</object-identifier>
+         <syntax>1.3.6.1.4.1.1466.115.121.1.15</syntax>
+      </attribute-type>
+      <!--******************************************-->
+      <!--****** erdebug ******-->
+      <!--******************************************-->
+      <attribute-type single-value="false">
+         <name>erdebug</name>
+         <object-identifier>erdebug-OID</object-identifier>
+         <syntax>1.3.6.1.4.1.1466.115.121.1.15</syntax>
+      </attribute-type>
+      <!--******************************************-->
+      <!--******  Objectclass definitions ******-->
+      <!--******************************************-->
+      <!--****** erITIMAdapterAccount ******-->
+      <!--******************************************-->
+      <class superior="top">
+         <name>erITIMAdapterAccount</name>
+         <description>Class representing an ITIMAdapter2 account</description>
+         <object-identifier>erITIMAdapterAccount-OID</object-identifier>
+         <attribute ref="eruid" required="true"/>
+         <attribute ref="erpassword" required="false"/>
+         <attribute ref="eraccountstatus" required="false"/>
+         <attribute ref="audio" required="false"/>
+         <attribute ref="businessCategory" required="false"/>
+         <attribute ref="carLicense" required="false"/>
+         <attribute ref="cn" required="false"/>
+         <attribute ref="departmentNumber" required="false"/>
+         <attribute ref="description" required="false"/>
+         <attribute ref="destinationIndicator" required="false"/>
+         <attribute ref="displayName" required="false"/>
+         <attribute ref="employeeNumber" required="false"/>
+         <attribute ref="employeeType" required="false"/>
+         <attribute ref="facsimileTelephoneNumber" required="false"/>
+         <attribute ref="givenName" required="false"/>
+         <attribute ref="homePhone" required="false"/>
+         <attribute ref="homePostalAddress" required="false"/>
+         <attribute ref="initials" required="false"/>
+         <attribute ref="internationaliSDNNumber" required="false"/>
+         <attribute ref="jpegPhoto" required="false"/>
+         <attribute ref="l" required="false"/>
+         <attribute ref="labeledURI" required="false"/>
+         <attribute ref="mail" required="false"/>
+         <attribute ref="manager" required="false"/>
+         <attribute ref="mobile" required="false"/>
+         <attribute ref="o" required="false"/>
+         <attribute ref="ou" required="false"/>
+         <attribute ref="pager" required="false"/>
+         <attribute ref="photo" required="false"/>
+         <attribute ref="physicalDeliveryOfficeName" required="false"/>
+         <attribute ref="postalAddress" required="false"/>
+         <attribute ref="postalCode" required="false"/>
+         <attribute ref="postOfficeBox" required="false"/>
+         <attribute ref="preferredDeliveryMethod" required="false"/>
+         <attribute ref="preferredLanguage" required="false"/>
+         <attribute ref="registeredAddress" required="false"/>
+         <attribute ref="roomNumber" required="false"/>
+         <attribute ref="secretary" required="false"/>
+         <attribute ref="seeAlso" required="false"/>
+         <attribute ref="sn" required="false"/>
+         <attribute ref="st" required="false"/>
+         <attribute ref="street" required="false"/>
+         <attribute ref="telephoneNumber" required="false"/>
+         <attribute ref="teletexTerminalIdentifier" required="false"/>
+         <attribute ref="telexNumber" required="false"/>
+         <attribute ref="title" required="false"/>
+         <attribute ref="uid" required="false"/>
+         <attribute ref="userCertificate" required="false"/>
+         <attribute ref="userPassword" required="false"/>
+         <attribute ref="userPKCS12" required="false"/>
+         <attribute ref="userSMIMECertificate" required="false"/>
+         <attribute ref="x121Address" required="false"/>
+         <attribute ref="x500UniqueIdentifier" required="false"/>
+         <attribute ref="erRoles" required="false"/>
+         <attribute ref="erPersonStatus" required="false"/>
+         <attribute ref="erSupervisor" required="false"/>
+         <attribute ref="erSynchPassword" required="false"/>
+         <attribute ref="eritimperdn" required="false"/>
+         <attribute ref="erperobjectclass" required="false"/>
+         <attribute ref="erpersonobjectclass" required="false"/>
+      </class>
+      <!--******************************************-->
+      <!--****** erITIMAdapterService ******-->
+      <!--******************************************-->
+      <class superior="top">
+         <name>erITIMAdapterService</name>
+         <description>Class representing an ITIMAdapter2 service</description>
+         <object-identifier>erITIMAdapterService-OID</object-identifier>
+         <attribute ref="erservicename" required="true"/>
+         <attribute ref="eritdiurl" required="false"/>
+         <attribute ref="erServicePassword" required="false"/>
+         <attribute ref="erServicePwd1" required="false"/>
+         <attribute ref="erServiceUid" required="false"/>
+         <attribute ref="description" required="true"/>
+         <attribute ref="ernamingattribute" required="false"/>
+         <attribute ref="erUid" required="false"/>
+         <attribute ref="erURL" required="false"/>
+         <attribute ref="erldapurl" required="false"/>
+         <attribute ref="erreconfilter" required="false"/>
+         <attribute ref="eruidattrs" required="false"/>
+         <attribute ref="erServicePwd2" required="false"/>
+         <attribute ref="erUseSecure" required="false"/>
+         <attribute ref="erusesecureldap" required="false"/>
+         <attribute ref="erdebug" required="false"/>
+      </class>
+   </directory-schema>
+</dsml>

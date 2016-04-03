@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Service
+   erserviceproviderfactory="com.ibm.itim.remoteservices.provider.itdiprovider.ItdiServiceProviderFactory" name="ITIMAdapterProfile">
+   <type category="service" location="schema.dsml"
+      name="erITIMAdapterService" profile="ITIMAdapterProfile">
+      <key>
+         <field>erservicename</field>
+      </key>
+      <form location="erITIMAdapterService.xml"/>
+   </type>
+   <type category="account" location="schema.dsml"
+      name="erITIMAdapterAccount" profile="ITIMAdapterAccount">
+      <key>
+         <field>eruid</field>
+      </key>
+      <form location="erITIMAdapterAccount.xml"/>
+   </type>
+   <operation cn="Create New Account">
+      <name>add</name>
+      <sendOnly name="erpersonobjectclass"/>
+      <description/>
+      <input name="eruid" source="eruid"/>
+      <input name="mail" source="mail"/>
+      <input name="erpersonobjectclass" source="erpersonobjectclass"/>
+      <input name="$dn" source="entrydn"/>
+      <input name="surname" source="sn"></input>
+      <dispatcherParameter name="OperationType">
+         <default>$(OO!operation)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erdebug" source="erdebug">
+         <default>$(SO!erdebug)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="servicename" source="erservicename">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="itimurl" source="eritdiurl">
+         <default>$(SO!eritdiurl)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="namingcontext" source="ernamingattribute">
+         <default>$(SO!ernamingattribute)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepwd1" source="erServicePwd1">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erserviceuid" source="erServiceUid">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="eruid" source="erUid">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepassword" source="erServicePassword">
+         <default>$(SO!erServicePassword)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="ldapurl" source="erldapurl">
+         <default>$(SO!erldapurl)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="filter" source="description">
+         <default>$(SO!erreconfilter)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="eruidattrs" source="eruidattrs">
+         <default>$(SO!eruidattrs)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erurl" source="erURL">
+         <default>$(SO!erURL)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erusesecure" source="erusesecure">
+         <default>$(SO!erusesecure)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erusesecureldap" source="erusesecureldap">
+         <default>$(SO!erusesecureldap)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepwd2" source="erServicePwd2">
+         <default>$(SO!erServicePwd2)</default>
+      </dispatcherParameter>
+      <assemblyLine>itimadapter.xml</assemblyLine>
+   </operation>
+   <operation cn="Delete an Account">
+      <name>delete</name>
+      <description/>
+      <input name="eruid" source="eruid"/>
+      <dispatcherParameter name="OperationType">
+         <default>$(OO!operation)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erdebug" source="erdebug">
+         <default>$(SO!erdebug)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="servicename" source="erservicename">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="itimurl" source="eritdiurl">
+         <default>$(SO!eritdiurl)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="namingcontext" source="ernamingattribute">
+         <default>$(SO!ernamingattribute)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepwd1" source="erServicePwd1">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erserviceuid" source="erServiceUid">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="eruid" source="erUid">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepassword" source="erServicePassword">
+         <default>$(SO!erServicePassword)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="ldapurl" source="erldapurl">
+         <default>$(SO!erldapurl)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="filter" source="description">
+         <default>$(SO!erreconfilter)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="eruidattrs" source="eruidattrs">
+         <default>$(SO!eruidattrs)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erurl" source="erURL">
+         <default>$(SO!erURL)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepwd2" source="erServicePwd2">
+         <default>$(SO!erServicePwd2)</default>
+      </dispatcherParameter>
+      <assemblyLine>itimadapter.xml</assemblyLine>
+   </operation>
+   <operation cn="Modify Existing Account">
+      <name>modify</name>
+      <name>suspend</name>
+      <name>restore</name>
+      <name>changepassword</name>
+      <name>validatepassword</name>
+      <description/>
+      <input name="eruid" source="eruid"/>
+      <dispatcherParameter name="OperationType">
+         <default>$(OO!operation)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="servicename" source="erservicename">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erdebug" source="ererdebug">
+         <default>$(SO!erdebug)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="itimurl" source="eritdiurl">
+         <default>$(SO!eritdiurl)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="namingcontext" source="ernamingattribute">
+         <default>$(SO!ernamingattribute)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepwd1" source="erServicePwd1">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erserviceuid" source="erServiceUid">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="eruid" source="erUid">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepassword" source="erServicePassword">
+         <default>$(SO!erServicePassword)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="ldapurl" source="erldapurl">
+         <default>$(SO!erldapurl)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="filter" source="description">
+         <default>$(SO!erreconfilter)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="eruidattrs" source="eruidattrs">
+         <default>$(SO!eruidattrs)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erurl" source="erURL">
+         <default>$(SO!erURL)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepwd2" source="erServicePwd2">
+         <default>$(SO!erServicePwd2)</default>
+      </dispatcherParameter>
+      <assemblyLine>itimadapter.xml</assemblyLine>
+   </operation>
+   <operation cn="Reconcile Accounts">
+      <name>search</name>
+      <description/>
+      <input name="eruid" source="eruid"/>
+      <dispatcherParameter name="OperationType">
+         <default>$(OO!operation)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="servicename" source="erservicename">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="itimurl" source="eritdiurl">
+         <default>$(SO!eritdiurl)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="namingcontext" source="ernamingattribute">
+         <default>$(SO!ernamingattribute)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepwd1" source="erServicePwd1">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erserviceuid" source="erServiceUid">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="eruid" source="erUid">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepassword" source="erServicePassword">
+         <default>$(SO!erServicePassword)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="ldapurl" source="erldapurl">
+         <default>$(SO!erldapurl)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="filter" source="description">
+         <default>$(SO!erreconfilter)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="eruidattrs" source="eruidattrs">
+         <default>$(SO!eruidattrs)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erurl" source="erURL">
+         <default>$(SO!erURL)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepwd2" source="erServicePwd2">
+         <default>$(SO!erServicePwd2)</default>
+      </dispatcherParameter>
+      <assemblyLine>itimadapter.xml</assemblyLine>
+   </operation>
+   <operation cn="Reconcile Supporting Data">
+      <name>searchData</name>
+      <description/>
+      <input name="eruid" source="eruid"/>
+      <dispatcherParameter name="OperationType">
+         <default>$(OO!operation)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="servicename" source="erservicename">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="itimurl" source="eritdiurl">
+         <default>$(SO!eritdiurl)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="namingcontext" source="ernamingattribute">
+         <default>$(SO!ernamingattribute)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepwd1" source="erServicePwd1">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erserviceuid" source="erServiceUid">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="eruid" source="erUid">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepassword" source="erServicePassword">
+         <default>$(SO!erServicePassword)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="ldapurl" source="erldapurl">
+         <default>$(SO!erldapurl)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="filter" source="description">
+         <default>$(SO!erreconfilter)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="eruidattrs" source="eruidattrs">
+         <default>$(SO!eruidattrs)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erurl" source="erURL">
+         <default>$(SO!erURL)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepwd2" source="erServicePwd2">
+         <default>$(SO!erServicePwd2)</default>
+      </dispatcherParameter>
+      <assemblyLine>ReconcileSupportingData.xml</assemblyLine>
+   </operation>
+   <operation cn="Test Connection">
+      <name>test</name>
+      <description/>
+      <input name="eruid" source="eruid"/>
+      <dispatcherParameter name="OperationType">
+         <default>$(OO!operation)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="servicename" source="erservicename">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="itimurl" source="eritdiurl">
+         <default>$(SO!eritdiurl)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="namingcontext" source="ernamingattribute">
+         <default>$(SO!ernamingattribute)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepwd1" source="erServicePwd1">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erserviceuid" source="erServiceUid">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="eruid" source="erUid">
+         <default>$(SO!erservicename)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepassword" source="erServicePassword">
+         <default>$(SO!erServicePassword)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="ldapurl" source="erldapurl">
+         <default>$(SO!erldapurl)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="filter" source="description">
+         <default>$(SO!erreconfilter)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="eruidattrs" source="eruidattrs">
+         <default>$(SO!eruidattrs)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erurl" source="erURL">
+         <default>$(SO!erURL)</default>
+      </dispatcherParameter>
+      <dispatcherParameter name="erservicepwd2" source="erServicePwd2">
+         <default>$(SO!erServicePwd2)</default>
+      </dispatcherParameter>
+      <assemblyLine>itimadapter.xml</assemblyLine>
+   </operation>
+   <properties>
+      <property name="AdapterCategory">
+         <value>Application</value>
+      </property>
+      <property name="ProfileVersion">
+         <value>1.0</value>
+      </property>
+      <property name="com.ibm.itim.remoteservices.ResourceProperties.PASSWORD_NOT_REQUIRED_ON_RESTORE">
+         <value>false</value>
+      </property>
+      <property name="com.ibm.itim.itdi.properties.RMI_URL" source="erITDIURL">
+         <value>rmi://localhost:16231/ITDIDispatcher</value>
+      </property>
+      <property name="Indexed">
+         <value/>
+      </property>
+   </properties>
+   <AttributeMap>
+      <Attribute name="erLastAccessDate" profile="account" value="none"/>
+   </AttributeMap>
+</Service>

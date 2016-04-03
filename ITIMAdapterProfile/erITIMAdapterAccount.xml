@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+   <body>
+      <form action="formvalidator0">
+         <formElement direction="inherit" label="$cn" name="data.cn">
+            <input name="data.cn" type="text"/>
+         </formElement>
+         <formElement direction="inherit" label="$erroles" name="data.erroles">
+            <editableTextList>
+               <comboItem label="$erroles" name="data.erroles">
+                  <size/>
+                  <width/>
+               </comboItem>
+            </editableTextList>
+         </formElement>
+         <formElement direction="inherit" label="$carlicense" name="data.carlicense">
+            <input name="data.carlicense" type="text"/>
+         </formElement>
+         <formElement direction="inherit" label="$eruid" name="data.eruid">
+            <input name="data.eruid" type="text"/>
+         </formElement>
+         <formElement direction="inherit" label="$erpersonobjectclass" name="data.erpersonobjectclass">
+            <input name="data.erpersonobjectclass" type="text"/>
+         </formElement>
+      </form>
+   </body>
+</page>
