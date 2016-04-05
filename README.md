@@ -5,6 +5,13 @@ The adapter has been written using IBM Tivoli Directory Integrator 7.0 and testi
 
 The adapter uses LDAP for reconciliation of Person entries and connects to ITIM/ISIM using DSML2 over JNDI.
 
+TDI ALs are in itimadapter.xml
+
+To create the profile to import in ITIM/ISIM: -
+
+	jar -cvf ITIMAdapterProfile.jar ITIMAdapterProfile/
+
+Adapter implements inetOrgPerson. Update the schema.dsml file with any/all custom attributes required for custom Person objectclasses and add them to the eritimadapteraccount objectclass.
 
 
 
