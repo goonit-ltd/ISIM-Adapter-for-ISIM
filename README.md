@@ -11,7 +11,7 @@ To create the profile to import in ITIM/ISIM: -
 
 	jar -cvf ITIMAdapterProfile.jar ITIMAdapterProfile/
 
-Adapter implements inetOrgPerson. Update the schema.dsml file with any/all custom attributes required for custom Person objectclasses and add them to the eritimadapteraccount objectclass.
+Adapter implements standard Person object (inetOrgPerson). Update the schema.dsml file with any/all custom attributes required for custom Person objectclasses and add them to the eritimadapteraccount objectclass.
 
 
 
