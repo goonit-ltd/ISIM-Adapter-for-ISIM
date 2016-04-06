@@ -3,7 +3,7 @@ This adapter for IBM Security Identity Manager allows you to provision from an I
 
 The adapter has been written using IBM Tivoli Directory Integrator 7.0 and testing performed using IBM Tivoli Directory 7.1.1 RMI service.
 
-Adapter has been tested on ITIM 5.1 only at this time and may need small changes for ISIM 6.0.
+Adapter has been tested on ITIM 5.1 only at this time and may need small changes for ISIM 6.0 (additional service attributes).
 
 The adapter uses LDAP for reconciliation of Person entries and connects to ITIM/ISIM using DSML2 over JNDI.
 
@@ -15,7 +15,8 @@ To create the profile to import in ITIM/ISIM: -
 
 Adapter implements standard Person object (inetOrgPerson). Update the schema.dsml file with any/all custom attributes required for custom Person objectclasses and add them to the eritimadapteraccount objectclass.
 
-
+# Design decisions
+Reconciliation filter is specified on the Service form as I don't wan't people accidentally performing full reconciliations between environments. The plan is to create a role in each environment and perform reconciliation based on membership of the role (erroles=<roledn>)
 
 
 
